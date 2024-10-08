@@ -39,8 +39,8 @@ run "apply" {
 run "apply_region" {
   command = apply
   variables {
-    name = "test"
-    role = "broken"
+    name   = "test"
+    role   = "broken"
     region = "europe-west2"
   }
 }
