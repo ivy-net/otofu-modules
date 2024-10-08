@@ -15,15 +15,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Refresh source list
+      - name: Install Open Tofu
         run: |
-          sudo apt update
-#      - name: Install dependencies
-#        run: >
-#          sudo apt install -y
-#          protobuf-compiler
-#          pkg-config
-#          libssl-dev
+          curl --proto '=https' --tlsv1.2 -fsSL https://get.opentofu.org/install-opentofu.sh -o install-opentofu.sh
+          chmod +x install-opentofu.sh
+          ./install-opentofu.sh --install-method deb
+          rm -f install-opentofu.sh
       - name: Install precommit
         run: |
           python -m pip install pre-commit
