@@ -31,7 +31,7 @@ jobs:
           pre-commit install --install-hooks
       - name: Init providers
         run: |
-          l=$(find . -maxdepth 1 -type d -name "./[a-z]*")
+          l=$(find . -maxdepth 1 -type d -name "[a-z]*")
           for i in ${l[@]} ;do echo $i; tofu init $i; done
       - name: Run Pre-Commit
         run: >
