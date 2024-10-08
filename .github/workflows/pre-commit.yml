@@ -32,7 +32,7 @@ jobs:
       - name: Init providers
         run: |
           l=$(find . -maxdepth 1 -type d -name "./[a-z]*")
-          for i in ${l[@]} ;do tofu init $i; done
+          for i in ${l[@]} ;do echo $i; tofu init $i; done
       - name: Run Pre-Commit
         run: >
           pre-commit run
