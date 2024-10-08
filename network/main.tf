@@ -1,5 +1,5 @@
 resource "google_compute_network" "this" {
-  name                    = "${var.name}"
+  name                    = var.name
   auto_create_subnetworks = false
   mtu                     = 1460
   routing_mode            = "REGIONAL"
