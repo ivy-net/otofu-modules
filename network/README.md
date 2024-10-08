@@ -1,3 +1,14 @@
+# Overview
+
+This module provides a GCP network.
+It 'hardcoded' for limited number of usages.
+At the moment it's only a network for the backend.
+
+# Versions
+
+- network-1 - initial network, only for backend
+
+# TF Docs
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
