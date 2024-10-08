@@ -6,7 +6,7 @@ resource "google_compute_network" "this" {
 }
 
 resource "google_compute_subnetwork" "backend" {
-  name                       = "backend"
+  name                       = "${var.name}-backend"
   ip_cidr_range              = "10.0.1.0/24"
   network                    = google_compute_network.this.id
   private_ipv6_google_access = "DISABLE_GOOGLE_ACCESS"
@@ -15,7 +15,7 @@ resource "google_compute_subnetwork" "backend" {
 }
 
 resource "google_compute_subnetwork" "proxy" {
-  name          = "proxy"
+  name          = "${var.name}-proxy"
   ip_cidr_range = "10.0.2.0/23"
   network       = google_compute_network.this.id
   purpose       = "REGIONAL_MANAGED_PROXY"

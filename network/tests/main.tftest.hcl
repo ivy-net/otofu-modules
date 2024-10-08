@@ -9,24 +9,38 @@ provider "google" {
   region  = var.region
 }
 
-run "test_ok" {
+run "plan_ok" {
   command = plan
-
   variables {
     name = "test"
     role = "backend"
   }
 }
 
-run "test_wrong" {
+run "plan_wrong" {
   command = plan
-
   variables {
     name = "test"
     role = "broken"
   }
-
   expect_failures = [
     var.role,
   ]
+}
+
+run "apply" {
+  command = apply
+  variables {
+    name = "test"
+    role = "broken"
+  }
+}
+
+run "apply_region" {
+  command = apply
+  variables {
+    name = "test"
+    role = "broken"
+    region = "europe-west2"
+  }
 }
