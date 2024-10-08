@@ -1,0 +1,38 @@
+---
+name: Run PreCommit
+
+on:
+#  pull_request:
+#    types: [opened, synchronize, reopened, ready_for_review]
+  push:
+    path:
+      .github
+jobs:
+  pre-commit:
+#  if: github.event.pull_request.draft == false
+    name: pre-commit checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Refresh source list
+        run: |
+          sudo apt update
+      - name: Install dependencies
+        run: >
+          sudo apt install -y
+          protobuf-compiler
+          pkg-config
+          libssl-dev
+      - name: Install hooks
+        run: |
+          pre-commit install --install-hooks
+      - name: Prebuild tests
+        run: |
+          cargo build --tests
+      - name: Run Pre-Commit
+        run: >
+          pre-commit run
+          --all-files
+          --show-diff-on-failure
+          -v
