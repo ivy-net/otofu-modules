@@ -17,7 +17,9 @@ jobs:
         uses: actions/checkout@v4
       - name: Install Open Tofu
         run: |
-          curl --proto '=https' --tlsv1.2 -fsSL https://get.opentofu.org/install-opentofu.sh -o install-opentofu.sh
+          curl --proto '=https' --tlsv1.2 \
+           -fsSL https://get.opentofu.org/install-opentofu.sh \
+           -o install-opentofu.sh
           chmod +x install-opentofu.sh
           ./install-opentofu.sh --install-method deb
           rm -f install-opentofu.sh
@@ -27,6 +29,10 @@ jobs:
       - name: Install hooks
         run: |
           pre-commit install --install-hooks
+      - name: Init providers
+        run: |
+          l=$(find . -depth 1 -type d -not -name ".*")
+          for i in ${l[@]} ;do tofu init $i; done
       - name: Run Pre-Commit
         run: >
           pre-commit run
