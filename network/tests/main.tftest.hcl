@@ -28,6 +28,10 @@ run "apply" {
     name = "test"
     role = "backend"
   }
+  assert {
+    condition     = can(output.network-id)
+    error_message = "The 'network-id' output does not exist"
+  }
 }
 
 run "apply_region" {

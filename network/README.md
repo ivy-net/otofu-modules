@@ -43,5 +43,9 @@ No modules.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_network-id"></a> [network-id](#output\_network-id) | ID of the network |
+| <a name="output_subnet-backend"></a> [subnet-backend](#output\_subnet-backend) | ID of the backend subnet |
+| <a name="output_subnet-proxy"></a> [subnet-proxy](#output\_subnet-proxy) | ID of the backend subnet |
 <!-- END_TF_DOCS -->
