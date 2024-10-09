@@ -4,20 +4,20 @@ variable "name" {
 }
 
 variable "project" {
-  description = "Name of the GCP project"
   default     = "ivynet-tests"
+  description = "Name of the GCP project"
   type        = string
 }
 
 variable "region" {
-  description = "GCP region"
   default     = "us-central1"
+  description = "Name of the region"
   type        = string
 }
 
 variable "role" {
-  description = "Network role"
   default     = "backend"
+  description = "Network role"
   type        = string
   validation {
     condition     = contains(["backend"], var.role)
