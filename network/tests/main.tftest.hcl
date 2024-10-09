@@ -1,9 +1,3 @@
-#run "setup_tests" {
-#    module {
-#        source = "./tests/setup"
-#    }
-#}
-
 provider "google" {
   project = var.project
   region  = var.region
@@ -32,7 +26,7 @@ run "apply" {
   command = apply
   variables {
     name = "test"
-    role = "broken"
+    role = "backend"
   }
 }
 
@@ -40,7 +34,7 @@ run "apply_region" {
   command = apply
   variables {
     name   = "test"
-    role   = "broken"
+    role   = "backend"
     region = "europe-west2"
   }
 }
