@@ -39,5 +39,6 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_dns_zone"></a> [dns\_zone](#output\_dns\_zone) | the name of the DNS Zone |
+| <a name="output_dns_zone_domain"></a> [dns\_zone\_domain](#output\_dns\_zone\_domain) | the domain name |
+| <a name="output_dns_zone_name"></a> [dns\_zone\_name](#output\_dns\_zone\_name) | the name of the DNS Zone |
 <!-- END_TF_DOCS -->
