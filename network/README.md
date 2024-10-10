@@ -5,7 +5,7 @@ It 'hardcoded' for limited number of usages.
 At the moment it's only a network for the backend.
 
 # Versions
-
+- network-2 - add outputs; reorg project & region vars setup
 - network-1 - initial network, only for backend
 
 # TF Docs
@@ -38,10 +38,15 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_name"></a> [name](#input\_name) | Name of the network | `string` | n/a | yes |
 | <a name="input_project"></a> [project](#input\_project) | Name of the GCP project | `string` | `"ivynet-tests"` | no |
-| <a name="input_region"></a> [region](#input\_region) | GCP region | `string` | `"us-central1"` | no |
+| <a name="input_region"></a> [region](#input\_region) | Name of the region | `string` | `"us-central1"` | no |
 | <a name="input_role"></a> [role](#input\_role) | Network role | `string` | `"backend"` | no |
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_network-id"></a> [network-id](#output\_network-id) | ID of the network |
+| <a name="output_subnet-cidr-proxy"></a> [subnet-cidr-proxy](#output\_subnet-cidr-proxy) | CIDR of the proxy subnet |
+| <a name="output_subnet-id-backend"></a> [subnet-id-backend](#output\_subnet-id-backend) | ID of the backend subnet |
+| <a name="output_subnet-id-proxy"></a> [subnet-id-proxy](#output\_subnet-id-proxy) | ID of the proxy subnet |
 <!-- END_TF_DOCS -->

@@ -25,5 +25,14 @@ repos:
     rev: v0.19.0
     hooks:
       - id: terraform-docs-go
+        name: tfdocs - backend module
+        args: ["backend"]
+      - id: terraform-docs-go
+        name: tfdocs - dns_zone module
+        args: ["dns_zone"]
+      - id: terraform-docs-go
+        name: tfdocs - lb module
+        args: ["lb"]
+      - id: terraform-docs-go
         name: tfdocs - network module
         args: ["network"]
