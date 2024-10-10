@@ -48,5 +48,7 @@ No modules.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_backend-group-id"></a> [backend-group-id](#output\_backend-group-id) | ID of the Backend VM group |
 <!-- END_TF_DOCS -->

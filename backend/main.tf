@@ -3,7 +3,6 @@ data "google_compute_image" "this" {
   project = var.project
 }
 
-
 resource "google_compute_instance" "this" {
   name = var.name
   boot_disk {
