@@ -13,6 +13,10 @@ variable "network-id" {
   description = "The ID of the network to add VM to"
   type        = string
 }
+variable "network-proxy-cidr" {
+  description = "The CIDR range of the proxy (load balancer)"
+  type        = string
+}
 
 variable "network-subnet-id" {
   description = "The ID of the subnet toadd VM to"

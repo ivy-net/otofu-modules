@@ -7,10 +7,10 @@ output "net" {
   value = module.network.network-id
 }
 
-output "back" {
-  value = module.network.subnet-backend
+output "back-id" {
+  value = module.network.subnet-id-backend
 }
 
-output "proxy" {
-  value = module.network.subnet-proxy
+output "proxy-cidr" {
+  value = module.network.subnet-cidr-proxy
 }
