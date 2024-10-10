@@ -28,5 +28,5 @@ repos:
         name: tfdocs - network module
         args: ["network"]
       - id: terraform-docs-go
-        name: tfdocs - vm module
-        args: ["vm"]
+        name: tfdocs - backend module
+        args: ["backend"]
