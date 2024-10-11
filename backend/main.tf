@@ -14,7 +14,7 @@ resource "google_compute_instance" "this" {
     creator = "terraform"
     area    = "backend"
   }
-  machine_type = var.vm-type
+  machine_type = var.vm-size
   network_interface {
     network    = var.network-id
     subnetwork = var.network-subnet-id
