@@ -3,6 +3,11 @@ output "network-id" {
   value       = google_compute_network.this.id
 }
 
+output "network-link" {
+  description = "Network self-link"
+  value       = google_compute_network.this.self_link
+}
+
 output "subnet-cidr-proxy" {
   description = "CIDR of the proxy subnet"
   value       = google_compute_subnetwork.backend.ip_cidr_range
