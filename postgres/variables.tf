@@ -3,12 +3,13 @@ variable "db-size" {
   description = "DB size/type"
   type        = string
 }
+
 variable "db-version" {
   default     = "POSTGRES_14"
   description = "DB type and version (e.g. POSTGRES_14)"
   type        = string
 }
-variable "deletion_protection" {
+variable "deletion-protection" {
   default     = true
   description = "Delete protection of DB"
   type        = bool
@@ -19,10 +20,28 @@ variable "name" {
   type        = string
 }
 
+variable "network-id" {
+  default     = ""
+  description = "ID of the network with backend"
+  type        = string
+}
+
+variable "network-link" {
+  default     = ""
+  description = "Link to the network with backend"
+  type        = string
+}
+
 variable "project" {
   default     = "ivynet-tests"
   description = "Name of the GCP project"
   type        = string
+}
+
+variable "private-network" {
+  default     = true
+  description = "Switch to connect to a private network"
+  type        = bool
 }
 
 variable "region" {

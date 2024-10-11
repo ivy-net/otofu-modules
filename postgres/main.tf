@@ -8,10 +8,19 @@ resource "google_sql_database" "this" {
 resource "google_sql_database_instance" "this" {
   name                = var.name
   database_version    = var.db-version
-  deletion_protection = var.deletion_protection
+  deletion_protection = var.deletion-protection
   project             = var.project
   region              = var.region
   settings {
     tier = var.db-size
+    dynamic "ip_configuration" {
+      for_each = var.private-network ? [1] : []
+      content {
+        ipv4_enabled                                  = false
+        private_network                               = var.network-link
+        enable_private_path_for_google_cloud_services = true
+      }
+    }
   }
+  depends_on = [google_service_networking_connection.this]
 }
