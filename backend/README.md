@@ -3,6 +3,7 @@
 This module a backend VM and instance group based on it.
 
 # Versions
+- backend-2 - rename size/type variable
 - backend-1 - initial backend vm
 
 # TF Docs

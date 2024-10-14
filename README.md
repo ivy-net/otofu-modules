@@ -6,6 +6,7 @@ Modules for Open Tofu (Terraform)
 - backend - vm for the backend
 - dns_zone - dns zone in GCP
 - lb - Load Balancer for Backend
+- postgres - DB for Postgres
 - network - a GCP network (for backend)
 
 
