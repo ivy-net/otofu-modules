@@ -30,6 +30,13 @@ variable "network-name" {
   type        = string
 }
 
+variable "password" {
+  default     = "ivy5TAYSthe5AME"
+  description = "Password for the postgres user"
+  type        = string
+  sensitive   = true
+}
+
 variable "project" {
   default     = "ivynet-tests"
   description = "Name of the GCP project"

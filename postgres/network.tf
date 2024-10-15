@@ -1,6 +1,6 @@
 resource "google_compute_global_address" "this" {
   count         = var.private-network ? 1 : 0
-  name          = "private-ip-address"
+  name          = "${var.name}-private-ip-address"
   address_type  = "INTERNAL"
   network       = var.network-id
   prefix_length = 16

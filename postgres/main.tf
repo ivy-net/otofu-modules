@@ -23,3 +23,11 @@ resource "google_sql_database_instance" "this" {
   }
   depends_on = [google_service_networking_connection.this]
 }
+
+resource "google_sql_user" "this" {
+  name     = "postgres"
+  instance = google_sql_database_instance.this.name
+  host     = ""
+  password = var.password
+  project  = var.project
+}
