@@ -20,6 +20,11 @@ variable "name" {
   type        = string
 }
 
+variable "network-id" {
+  description = "ID of the network"
+  type        = string
+}
+
 variable "network-name" {
   description = "Name for the network"
   type        = string

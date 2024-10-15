@@ -39,6 +39,7 @@ No modules.
 | <a name="input_db-version"></a> [db-version](#input\_db-version) | DB type and version (e.g. POSTGRES\_14) | `string` | `"POSTGRES_14"` | no |
 | <a name="input_deletion-protection"></a> [deletion-protection](#input\_deletion-protection) | Delete protection of DB | `bool` | `true` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name of the DB | `string` | n/a | yes |
+| <a name="input_network-id"></a> [network-id](#input\_network-id) | ID of the network | `string` | n/a | yes |
 | <a name="input_network-name"></a> [network-name](#input\_network-name) | Name for the network | `string` | n/a | yes |
 | <a name="input_private-network"></a> [private-network](#input\_private-network) | Switch to connect to a private network | `bool` | `true` | no |
 | <a name="input_project"></a> [project](#input\_project) | Name of the GCP project | `string` | `"ivynet-tests"` | no |

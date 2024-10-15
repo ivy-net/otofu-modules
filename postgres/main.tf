@@ -16,11 +16,8 @@ resource "google_sql_database_instance" "this" {
     dynamic "ip_configuration" {
       for_each = var.private-network ? [1] : []
       content {
-        ipv4_enabled = false
-        psc_config {
-          psc_enabled               = true
-          allowed_consumer_projects = [var.project]
-        }
+        ipv4_enabled    = false
+        private_network = var.network-id
       }
     }
   }
