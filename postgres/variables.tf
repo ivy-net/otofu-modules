@@ -16,19 +16,12 @@ variable "deletion-protection" {
 }
 
 variable "name" {
-  description = "Name of the network"
+  description = "Name of the DB"
   type        = string
 }
 
-variable "network-id" {
-  default     = ""
-  description = "ID of the network with backend"
-  type        = string
-}
-
-variable "network-link" {
-  default     = ""
-  description = "Link to the network with backend"
+variable "network-name" {
+  description = "Name for the network"
   type        = string
 }
 

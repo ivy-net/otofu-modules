@@ -19,8 +19,12 @@ output "backend-id" {
   value = module.vm.backend-group-id
 }
 
-output "net" {
+output "net-id" {
   value = module.network.network-id
+}
+
+output "net-name" {
+  value = module.network.network-name
 }
 
 output "net-link" {
