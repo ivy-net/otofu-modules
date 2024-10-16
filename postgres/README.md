@@ -49,5 +49,7 @@ No modules.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_ip"></a> [ip](#output\_ip) | DB IP address |
 <!-- END_TF_DOCS -->
