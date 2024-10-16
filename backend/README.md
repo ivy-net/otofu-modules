@@ -3,6 +3,7 @@
 This module a backend VM and instance group based on it.
 
 # Versions
+- backend-2 - rename size/type variable
 - backend-1 - initial backend vm
 
 # TF Docs
@@ -15,7 +16,7 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_google"></a> [google](#provider\_google) | 6.6.0 |
+| <a name="provider_google"></a> [google](#provider\_google) | 6.7.0 |
 
 ## Modules
 
@@ -44,7 +45,7 @@ No modules.
 | <a name="input_project"></a> [project](#input\_project) | Name of the GCP project | `string` | `"ivynet-tests"` | no |
 | <a name="input_region"></a> [region](#input\_region) | Name of the region | `string` | `"us-central1"` | no |
 | <a name="input_region_zone"></a> [region\_zone](#input\_region\_zone) | Letter for the zone (by default based on the region) | `string` | `"c"` | no |
-| <a name="input_vm-type"></a> [vm-type](#input\_vm-type) | VM size/type | `string` | `"n2-standard-2"` | no |
+| <a name="input_vm-size"></a> [vm-size](#input\_vm-size) | VM size/type | `string` | `"n2-standard-2"` | no |
 
 ## Outputs
 

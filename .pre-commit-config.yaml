@@ -36,3 +36,6 @@ repos:
       - id: terraform-docs-go
         name: tfdocs - network module
         args: ["network"]
+      - id: terraform-docs-go
+        name: tfdocs - postgres/DB module
+        args: ["postgres"]

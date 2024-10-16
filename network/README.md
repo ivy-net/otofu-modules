@@ -5,6 +5,7 @@ It 'hardcoded' for limited number of usages.
 At the moment it's only a network for the backend.
 
 # Versions
+- network-3 - extra output for DB/PG
 - network-2 - add outputs; reorg project & region vars setup
 - network-1 - initial network, only for backend
 
@@ -18,7 +19,7 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_google"></a> [google](#provider\_google) | 6.6.0 |
+| <a name="provider_google"></a> [google](#provider\_google) | 6.7.0 |
 
 ## Modules
 
@@ -46,6 +47,8 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_network-id"></a> [network-id](#output\_network-id) | ID of the network |
+| <a name="output_network-link"></a> [network-link](#output\_network-link) | Network self-link |
+| <a name="output_network-name"></a> [network-name](#output\_network-name) | Network name |
 | <a name="output_subnet-cidr-proxy"></a> [subnet-cidr-proxy](#output\_subnet-cidr-proxy) | CIDR of the proxy subnet |
 | <a name="output_subnet-id-backend"></a> [subnet-id-backend](#output\_subnet-id-backend) | ID of the backend subnet |
 | <a name="output_subnet-id-proxy"></a> [subnet-id-proxy](#output\_subnet-id-proxy) | ID of the proxy subnet |

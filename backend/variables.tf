@@ -41,7 +41,7 @@ variable "region_zone" {
   type        = string
 }
 
-variable "vm-type" {
+variable "vm-size" {
   default     = "n2-standard-2"
   description = "VM size/type"
   type        = string
