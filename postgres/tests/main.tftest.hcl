@@ -17,7 +17,7 @@ run "setup" {
 run "plan_not_net" {
   command = plan
   variables {
-    name            = "test"
+    name            = run.setup.name1
     network-id      = run.setup.net-id
     network-name    = run.setup.net-name
     private-network = false
@@ -27,7 +27,7 @@ run "plan_not_net" {
 run "plan_full" {
   command = plan
   variables {
-    name         = "test"
+    name         = run.setup.name2
     network-id   = run.setup.net-id
     network-name = run.setup.net-name
   }
@@ -36,7 +36,7 @@ run "plan_full" {
 run "apply_simple" {
   command = apply
   variables {
-    name                = "test"
+    name                = run.setup.name1
     deletion-protection = false
     db-size             = "db-g1-small"
     db-version          = "POSTGRES_15"
@@ -49,7 +49,7 @@ run "apply_simple" {
 run "apply_private" {
   command = apply
   variables {
-    name                = "test2"
+    name                = run.setup.name2
     deletion-protection = false
     network-id          = run.setup.net-id
     network-name        = run.setup.net-name
