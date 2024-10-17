@@ -1,3 +1,9 @@
+variable "backup" {
+  default     = true
+  description = "Switch to enable backups"
+  type        = bool
+}
+
 variable "db-size" {
   default     = "db-f1-micro"
   description = "DB size/type"
