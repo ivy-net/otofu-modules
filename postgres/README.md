@@ -1,8 +1,10 @@
 # Overview
 
 This module provides a DB (Postgres) mostly for backend.
+By default it enables backup, but not HA.
 
 # Versions
+- postgres-2 - add HA and backup switch
 - postgres-1 - basic module for backend
 
 # TF Docs
