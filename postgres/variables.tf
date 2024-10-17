@@ -1,3 +1,19 @@
+variable "availability" {
+  default     = "ZONAL"
+  description = "Type of availability (normal=ZONAL, HA=REGIONAL)"
+  type        = string
+  validation {
+    condition     = contains(["ZONAL", "REGIONAL"], var.availability)
+    error_message = "It has to be 'ZONAL' or 'REGIONAL'"
+  }
+}
+
+variable "backup" {
+  default     = true
+  description = "Switch to enable backups"
+  type        = bool
+}
+
 variable "db-size" {
   default     = "db-f1-micro"
   description = "DB size/type"

@@ -20,6 +20,14 @@ resource "google_sql_database_instance" "this" {
         private_network = var.network-id
       }
     }
+    dynamic "backup_configuration" {
+      for_each = var.backup ? [1] : []
+      content {
+        enabled                        = true
+        point_in_time_recovery_enabled = true
+      }
+    }
+    availability_type = var.availability
   }
   depends_on = [google_service_networking_connection.this]
 }

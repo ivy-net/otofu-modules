@@ -1,8 +1,10 @@
 # Overview
 
 This module provides a DB (Postgres) mostly for backend.
+By default it enables backup, but not HA.
 
 # Versions
+- postgres-2 - add HA and backup switch
 - postgres-1 - basic module for backend
 
 # TF Docs
@@ -36,6 +38,8 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_availability"></a> [availability](#input\_availability) | Type of availability (normal=ZONAL, HA=REGIONAL) | `string` | `"ZONAL"` | no |
+| <a name="input_backup"></a> [backup](#input\_backup) | Switch to enable backups | `bool` | `true` | no |
 | <a name="input_db-size"></a> [db-size](#input\_db-size) | DB size/type | `string` | `"db-f1-micro"` | no |
 | <a name="input_db-version"></a> [db-version](#input\_db-version) | DB type and version (e.g. POSTGRES\_14) | `string` | `"POSTGRES_14"` | no |
 | <a name="input_deletion-protection"></a> [deletion-protection](#input\_deletion-protection) | Delete protection of DB | `bool` | `true` | no |
