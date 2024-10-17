@@ -27,6 +27,7 @@ resource "google_sql_database_instance" "this" {
         point_in_time_recovery_enabled = true
       }
     }
+    availability_type = var.availability
   }
   depends_on = [google_service_networking_connection.this]
 }
