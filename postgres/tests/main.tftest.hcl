@@ -1,58 +1,79 @@
 provider "google" {}
 
-run "setup_plan" {
+run "standalone_plan" {
   command = plan
   module {
-    source = "./tests/setup"
+    source = "./tests/standalone"
   }
 }
 
-run "setup" {
+run "setup1" {
   module {
-    source = "./tests/setup"
+    source = "./tests/standalone"
   }
 }
 
-
-run "plan_not_net" {
+run "plan_standalone" {
   command = plan
   variables {
-    name            = run.setup.name1
-    network-id      = run.setup.net-id
-    network-name    = run.setup.net-name
-    private-network = false
-  }
-}
-
-run "plan_full" {
-  command = plan
-  variables {
-    name         = run.setup.name2
-    network-id   = run.setup.net-id
-    network-name = run.setup.net-name
-  }
-}
-
-run "apply_simple" {
-  command = apply
-  variables {
-    name                = run.setup.name1
+    name                = run.setup1.name
     deletion-protection = false
     db-size             = "db-g1-small"
     db-version          = "POSTGRES_15"
-    network-id          = run.setup.net-id
-    network-name        = run.setup.net-name
+    network-id          = run.setup1.net-id
+    network-name        = run.setup1.net-name
     private-network     = false
+  }
+}
+
+run "apply_standalone" {
+  command = apply
+  variables {
+    name                = run.setup1.name
+    deletion-protection = false
+    db-size             = "db-g1-small"
+    db-version          = "POSTGRES_15"
+    network-id          = run.setup1.net-id
+    network-name        = run.setup1.net-name
+    private-network     = false
+  }
+}
+
+run "setup2" {
+  module {
+    source = "./tests/private"
+  }
+}
+
+run "plan_private" {
+  command = plan
+  variables {
+    name                = run.setup2.name
+    deletion-protection = false
+    network-id          = run.setup2.net-id
+    network-name        = run.setup2.net-name
+    private-network     = true
   }
 }
 
 run "apply_private" {
   command = apply
   variables {
-    name                = run.setup.name2
+    name                = run.setup2.name
     deletion-protection = false
-    network-id          = run.setup.net-id
-    network-name        = run.setup.net-name
+    network-id          = run.setup2.net-id
+    network-name        = run.setup2.net-name
     private-network     = true
+  }
+}
+
+run "apply_go_public" {
+  command = apply
+  variables {
+    name                = run.setup2.name
+    deletion-protection = false
+    network-id          = run.setup2.net-id
+    network-name        = run.setup2.net-name
+    private-network     = false
   }
 }
