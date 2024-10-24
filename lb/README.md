@@ -1,3 +1,14 @@
+# Overview
+
+This module creates a LB for the backend.
+The traffic is:
+- port 443 -> 8080 (HTTPs)
+- port 50050 -> 50050 (GRPC/HTTP2)
+
+# Versions
+- lb-1 initial version of the module
+
+# TF Docs
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
@@ -7,7 +18,7 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_google"></a> [google](#provider\_google) | 6.7.0 |
+| <a name="provider_google"></a> [google](#provider\_google) | 6.8.0 |
 
 ## Modules
 
