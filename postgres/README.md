@@ -7,6 +7,11 @@ By default it enables backup, but not HA.
 - postgres-2 - add HA and backup switch
 - postgres-1 - basic module for backend
 
+# Tests
+At the moment the module tests don't full work.
+The `tofu test` pass all scenarios, but failes on resources deletion.
+The problem is described in https://github.com/hashicorp/terraform-provider-google/issues/19908.
+
 # TF Docs
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
