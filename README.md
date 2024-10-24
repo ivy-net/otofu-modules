@@ -1,13 +1,13 @@
 # otofu-modules
-Modules for Open Tofu (Terraform)
+The Open Tofu (Terraform) to deploy an infrastructure required for an application deployment.
 
 ## Module list
 
-- backend - vm for the backend
-- dns_zone - dns zone in GCP
-- lb - Load Balancer for Backend
-- postgres - DB for Postgres
-- network - a GCP network (for backend)
+- [backend](backend/README.md) - vm for the backend
+- [dns_zone](dns_zone/README.md) - dns zone in GCP
+- [lb](lb/README.md) - Load Balancer for Backend
+- [postgres](postgres/README.md) - DB for Postgres
+- [network](network/README.md) - a GCP network (for backend)
 
 
 # Repository Technical info
