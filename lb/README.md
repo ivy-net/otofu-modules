@@ -6,7 +6,8 @@ The traffic is:
 - port 50050 -> 50050 (GRPC/HTTP2)
 
 # Versions
-- lb-1 initial version of the module
+- lb-2 - fix DNS record/domain for SSL
+- lb-1 - initial version of the module
 
 # TF Docs
 <!-- BEGIN_TF_DOCS -->
@@ -18,7 +19,7 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_google"></a> [google](#provider\_google) | 6.8.0 |
+| <a name="provider_google"></a> [google](#provider\_google) | 6.9.0 |
 
 ## Modules
 
