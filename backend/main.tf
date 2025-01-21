@@ -3,6 +3,13 @@ data "google_compute_image" "this" {
   project = var.project
 }
 
+locals {
+  roles = [
+    "roles/logging.logWriter",
+    "roles/monitoring.metricWriter"
+  ]
+}
+
 resource "google_compute_instance" "this" {
   name = var.name
   boot_disk {
@@ -44,4 +51,17 @@ resource "google_compute_instance_group" "this" {
   }
   project = var.project
   zone    = "${var.region}-${var.region_zone}"
+}
+
+resource "google_service_account" "this" {
+  account_id   = "backend"
+  display_name = "Roles for Backend"
+  project      = var.project
+}
+
+resource "google_project_iam_member" "this" {
+  for_each = toset(local.roles)
+  member   = "serviceAccount:${google_service_account.this.email}"
+  project  = var.project
+  role     = each.value
 }
