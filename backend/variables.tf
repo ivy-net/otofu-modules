@@ -41,6 +41,12 @@ variable "region_zone" {
   type        = string
 }
 
+variable "sa-email" {
+  default     = ""
+  description = "email for the SA"
+  type        = string
+}
+
 variable "vm-size" {
   default     = "n2-standard-2"
   description = "VM size/type"
