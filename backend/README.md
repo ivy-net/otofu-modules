@@ -31,8 +31,6 @@ No modules.
 | [google_compute_firewall.ssh](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_firewall) | resource |
 | [google_compute_instance.this](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_instance) | resource |
 | [google_compute_instance_group.this](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_instance_group) | resource |
-| [google_project_iam_member.this](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/project_iam_member) | resource |
-| [google_service_account.this](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/service_account) | resource |
 | [google_compute_image.this](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/compute_image) | data source |
 
 ## Inputs
@@ -47,6 +45,7 @@ No modules.
 | <a name="input_project"></a> [project](#input\_project) | Name of the GCP project | `string` | `"ivynet-tests"` | no |
 | <a name="input_region"></a> [region](#input\_region) | Name of the region | `string` | `"us-central1"` | no |
 | <a name="input_region_zone"></a> [region\_zone](#input\_region\_zone) | Letter for the zone (by default based on the region) | `string` | `"c"` | no |
+| <a name="input_sa-email"></a> [sa-email](#input\_sa-email) | email for the SA | `string` | `""` | no |
 | <a name="input_vm-size"></a> [vm-size](#input\_vm-size) | VM size/type | `string` | `"n2-standard-2"` | no |
 
 ## Outputs

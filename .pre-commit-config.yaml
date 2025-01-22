@@ -39,3 +39,6 @@ repos:
       - id: terraform-docs-go
         name: tfdocs - postgres/DB module
         args: ["postgres"]
+      - id: terraform-docs-go
+        name: tfdocs - service_account module
+        args: ["service_account"]

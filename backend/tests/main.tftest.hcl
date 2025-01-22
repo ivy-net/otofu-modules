@@ -36,3 +36,14 @@ run "apply" {
     network-proxy-cidr = run.setup.proxy-cidr
   }
 }
+
+run "apply_sa" {
+  command = apply
+  variables {
+    name               = "test51"
+    network-id         = run.setup.net
+    network-subnet-id  = run.setup.back-id
+    network-proxy-cidr = run.setup.proxy-cidr
+    sa-email           = run.setup.sa-email
+  }
+}
