@@ -6,6 +6,7 @@ The traffic is:
 - port 50050 -> 50050 (GRPC/HTTP2)
 
 # Versions
+- lb-3 - enable logs
 - lb-2 - fix DNS record/domain for SSL
 - lb-1 - initial version of the module
 
@@ -19,7 +20,7 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_google"></a> [google](#provider\_google) | 6.16.0 |
+| <a name="provider_google"></a> [google](#provider\_google) | 6.20.0 |
 
 ## Modules
 
@@ -49,6 +50,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_dns_domain"></a> [dns\_domain](#input\_dns\_domain) | Domain Name used for FQDN of LB | `string` | n/a | yes |
 | <a name="input_dns_zone"></a> [dns\_zone](#input\_dns\_zone) | The name of the DNS ZONE | `string` | n/a | yes |
+| <a name="input_logs"></a> [logs](#input\_logs) | Enable logs | `bool` | `false` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name of the loadbalancer | `string` | n/a | yes |
 | <a name="input_project"></a> [project](#input\_project) | Name of the GCP project | `string` | `"ivynet-tests"` | no |
 | <a name="input_region"></a> [region](#input\_region) | Name of the region | `string` | `"us-central1"` | no |
