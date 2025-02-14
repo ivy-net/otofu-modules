@@ -8,6 +8,11 @@ variable "dns_zone" {
   type        = string
 }
 
+variable "logs" {
+  default     = false
+  description = "Enable logs"
+  type        = bool
+}
 variable "name" {
   description = "Name of the loadbalancer"
   type        = string

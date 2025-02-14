@@ -22,9 +22,9 @@ resource "google_compute_backend_service" "grpc" {
   connection_draining_timeout_sec = 0
   health_checks                   = [google_compute_health_check.grpc.id]
   load_balancing_scheme           = "EXTERNAL"
-  /*   log_config {
-    enable = true
-  }*/
+  log_config {
+    enable = var.logs
+  }
   port_name        = "grpc"
   project          = var.project
   protocol         = "HTTP2"
