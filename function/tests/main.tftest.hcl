@@ -17,7 +17,7 @@ run "apply" {
   variables {
     name        = "funtest-wawrzek"
     description = "Tofu Test of SA"
-    entrypoint  = "helloHTTP"
+    entrypoint  = "helloHttp"
     path        = "tests/nodejs-docs-samples/functions/helloworld/helloworldHttp"
     runtime     = "nodejs22"
   }
