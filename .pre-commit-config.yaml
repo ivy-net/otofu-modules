@@ -31,6 +31,9 @@ repos:
         name: tfdocs - dns_zone module
         args: ["dns_zone"]
       - id: terraform-docs-go
+        name: tfdocs - function module
+        args: ["function"]
+      - id: terraform-docs-go
         name: tfdocs - lb module
         args: ["lb"]
       - id: terraform-docs-go

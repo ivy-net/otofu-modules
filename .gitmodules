@@ -1,0 +1,3 @@
+[submodule "function/tests/nodejs-docs-samples"]
+	path = function/tests/nodejs-docs-samples
+	url = https://github.com/GoogleCloudPlatform/nodejs-docs-samples.git
