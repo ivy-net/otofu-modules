@@ -10,12 +10,6 @@ variable "entrypoint" {
   type        = string
 }
 
-variable "member" {
-  default     = "allAuthenticatedUsers"
-  description = "Members of IAM role"
-  type        = string
-}
-
 variable "name" {
   description = "Name for the function"
   type        = string

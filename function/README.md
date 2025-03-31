@@ -48,7 +48,6 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_description"></a> [description](#input\_description) | The function description | `string` | `"A simple function"` | no |
 | <a name="input_entrypoint"></a> [entrypoint](#input\_entrypoint) | The function entry point | `string` | `"hello_gcs"` | no |
-| <a name="input_member"></a> [member](#input\_member) | Members of IAM role | `string` | `"allAuthenticatedUsers"` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name for the function | `string` | n/a | yes |
 | <a name="input_path"></a> [path](#input\_path) | Path to directory with the function | `string` | `"function"` | no |
 | <a name="input_project"></a> [project](#input\_project) | Name of the GCP project | `string` | `"ivynet-tests"` | no |
