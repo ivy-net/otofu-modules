@@ -2,7 +2,12 @@
 
 This module is for a function.
 
+## TODO
+
+Abstract triggers and role assigments
+
 # Versions
+- function-2 - add triggers
 - function-1 - initial function
 
 # TF Docs
