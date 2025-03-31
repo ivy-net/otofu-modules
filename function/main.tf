@@ -40,10 +40,74 @@ resource "google_cloudfunctions2_function" "this" {
   }
 }
 
+resource "google_eventarc_trigger" "storage_deleted" {
+  name = "client-copy-deleted"
+  destination {
+    cloud_run_service {
+      service = google_cloudfunctions2_function.this.name
+      region  = google_cloudfunctions2_function.this.location
+    }
+  }
+  location = "us"
+  matching_criteria {
+    attribute = "type"
+    value     = "google.cloud.storage.object.v1.deleted"
+  }
+  matching_criteria {
+    attribute = "bucket"
+    value     = "ivynet-share"
+  }
+  project         = var.project
+  service_account = google_service_account.this.email
+}
+
+resource "google_eventarc_trigger" "storage_finalized" {
+  name = "client-copy-finalized"
+  destination {
+    cloud_run_service {
+      service = google_cloudfunctions2_function.this.name
+      region  = google_cloudfunctions2_function.this.location
+    }
+  }
+  location = "us"
+  matching_criteria {
+    attribute = "type"
+    value     = "google.cloud.storage.object.v1.finalized"
+  }
+  matching_criteria {
+    attribute = "bucket"
+    value     = "ivynet-share"
+  }
+  project         = var.project
+  service_account = google_service_account.this.email
+}
+
 resource "google_cloud_run_service_iam_member" "this" {
   location = google_cloudfunctions2_function.this.location
-  member   = "allUsers"
+  member   = "serviceAccount:${google_service_account.this.email}"
   project  = var.project
   role     = "roles/run.invoker"
   service  = google_cloudfunctions2_function.this.name
+}
+
+resource "google_project_iam_member" "this" {
+  for_each = toset([
+    "roles/eventarc.eventReceiver",
+    "roles/eventarc.serviceAgent"
+  ])
+  member  = "serviceAccount:${google_service_account.this.email}"
+  project = var.project
+  role    = each.key
+}
+
+resource "google_service_account_iam_member" "this" {
+  service_account_id = google_service_account.this.name
+  member             = "serviceAccount:${google_service_account.this.email}"
+  role               = "roles/iam.serviceAccountUser"
+}
+
+resource "google_service_account" "this" {
+  account_id   = "test-fun-trigger"
+  display_name = "SA for trigger for Test Function"
+  project      = var.project
 }
