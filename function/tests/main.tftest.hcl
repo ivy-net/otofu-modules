@@ -15,7 +15,7 @@ run "plan_ok" {
 run "apply" {
   command = apply
   variables {
-    name        = "funtest-wawrzek"
+    name        = "funtest-wawrzek-hello"
     description = "Tofu Test of SA"
     entrypoint  = "helloHttp"
     path        = "tests/nodejs-docs-samples/functions/helloworld/helloworldHttp"
